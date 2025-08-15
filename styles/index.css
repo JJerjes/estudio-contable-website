@@ -129,6 +129,47 @@ header {
     align-items: center;
 }
 
+@media (max-width: 425px) {
+
+    .line_one {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .line_two {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100px;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 152px;
+    }
+
+    .nav a {
+        width: 100%;
+        padding: 7px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        justify-content: start;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+}
+
+
 @media (max-width: 375px) {
 
     .line_one {
