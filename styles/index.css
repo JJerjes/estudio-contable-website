@@ -1,3 +1,9 @@
+:root {
+    --line--color: #f8f9fa;
+    --line--two: rgba(0, 0, 0, 0.2);
+    --a--color: black;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -19,35 +25,55 @@ header {
     display: grid;
     grid-template-columns: auto auto;
     padding: 3px;
-    background-color: #f8f9fa;
+    background-color: var(--line--color);
+    align-items: center;
 }
 
 .div_one a {
     margin: 0 7px;
     text-decoration: none;
+    align-items: center;
+    color: var(--a--color);
+    font-size: small;
+}
+
+.fa-regular,
+.fa-phone {
+    margin: 0 4px;
+    color: none;
+}
+
+.div_one a:hover {
+    color: rgb(111, 108, 108);
 }
 
 .div_two ul {
     display: flex;
     list-style: none;
     justify-content: end;
+    padding: 0 10px 0 0;
 }
 
 .div_two a {
     margin: 0 5px;
+    color: var(--a--color);
+}
+
+.div_two a:hover {
+    color: orangered;
 }
 
 .line_two {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--line--two);
 }
 
 .line_two img {
-    border: 1px solid red;
     margin: 0 20px;
 }
+
 
 .nav {
     display: flex;
@@ -57,9 +83,88 @@ header {
 }
 
 .nav a {
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     justify-content: center;
     text-decoration: none;
     text-align: center;
+    color: var(--a--color);
+    font-size: 1rem;
+}
+
+.nav a:hover {
+    color: blue;
+    font-weight: 500;
+}
+
+.menu {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 60px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: transparent;
+    display: none;
+    border: none;
+}
+
+.menu::before {
+    content: '≣';
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu.open::before {
+    content: '✕';
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 375px) {
+
+    .line_one {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    .line_two {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100px;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 152px;
+    }
+
+    .nav a {
+        width: 100%;
+        padding: 7px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        justify-content: start;
+    }
+
+    .nav.open {
+        display: flex;
+    }
 }
