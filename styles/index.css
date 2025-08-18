@@ -1,5 +1,5 @@
 :root {
-    --line--color: #f8f9fa;
+    --line--color: #b6d0ea61;
     --line--two: rgba(0, 0, 0, 0.2);
     --a--color: black;
 }
@@ -19,6 +19,10 @@ body {
 header {
     display: grid;
     grid-template-rows: auto 1fr;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .line_one {
@@ -129,6 +133,14 @@ header {
     align-items: center;
 }
 
+h1 {
+    margin: 0 0 0 30px;
+}
+
+main {
+    padding-top: 120px;
+}
+
 @media (max-width: 425px) {
 
     .line_one {
@@ -136,6 +148,7 @@ header {
         flex-direction: column-reverse;
         justify-content: center;
         padding: 8px;
+        background-color: var(--line--color);
     }
 
     .line_two {
